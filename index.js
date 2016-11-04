@@ -64,6 +64,7 @@ exports.handler = (event, context, callback) => {
       break;
     default:
       console.log("NO CLICKS GIVEN");
+      context.done();
   }
 
 };

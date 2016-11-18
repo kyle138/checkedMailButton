@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+Written by Kyle Munz
+https://github.com/kyle138/checkedMailButton
+*/
+
 const AWS = require('aws-sdk');
 const SNS = new AWS.SNS( {apiVersion: '2010-03-31'} );
 

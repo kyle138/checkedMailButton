@@ -30,9 +30,10 @@ ___
 ___
 ## Step 3: Update Lambda Function
 ##### After the sample code has created the SNS Topic updated in Step 2 it has served its purpose. Overwrite the sample code with the code below updating ‘+1PHONENUMBER’ with your actual cellular numbers and appropriate messages.
-1. Copy and paste the contents of [index.js](https://github.com/kyle138/checkedMailButton/blob/master/index.js) into your Lambda function.
-2. Update the '+1PHONENUMBER' entries below with your actual cellular numbers and appropriate messages.
-3. Click on **[Save]** and click your Button again to test.
+1. Go to the Amazon Lambda Console.
+2. Copy and paste the contents of [index.js](https://github.com/kyle138/checkedMailButton/blob/master/index.js) into your Lambda function.
+3. Update the '+1PHONENUMBER' entries below with your actual cellular numbers and appropriate messages.
+4. Click on **[Save]** and click your Button again to test.
 
 ___
 ## Credits:

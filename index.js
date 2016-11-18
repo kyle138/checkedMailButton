@@ -20,47 +20,38 @@ var params = {};
  */
 
 exports.handler = (event, context, callback) => {
-  //console.log('Received event:', event.clickType);    //DEBUG
+  //console.log('Received event:', JSON.stringify(event,null,2));    //DEBUG
+
+  function sendMsg(number, message, cb) {
+    if(number && message) {
+      params.PhoneNumber = number;
+      params.Message = message;
+      SNS.publish(params, function(err, data) {
+        if (err) {
+          console.error("SNS Publish Failed: "+err);
+        } else {
+          console.log("SNS Publish successful! "+JSON.stringify(data,null,2));
+          callback(null, data.MessageId);
+        }
+      });
+    } else {
+      console.log("sendMsg: Number and Message are required fields.");
+      callback("sendMsg failed", null);
+    }
+  };
 
   switch(event.clickType) {
     case "SINGLE":
       console.log("SINGLE Click");
-      params.PhoneNumber = '+1PHONENUMBER';
-      params.Message = 'Cathy checked the mail.';
-      SNS.publish(params, function (err, data) {
-        if (err) {
-          console.error("SNS Publish failed: "+err);
-        } else {
-          console.log("SNS Publish successful! "+ JSON.stringify(data,null,2));
-          callback(null, data.MessageId);
-        }
-      });
+      sendMsg('+1PHONENUMBER','Cathy checked the mail.');
       break;
     case "DOUBLE":
       console.log("DOUBLE CLICK");
-      params.PhoneNumber = '+1PHONENUMBER';
-      params.Message = 'Kyle checked the mail.';
-      SNS.publish(params, function (err, data) {
-        if (err) {
-          console.error("SNS Publish failed: "+err);
-        } else {
-          console.log("SNS Publish successful! "+ JSON.stringify(data,null,2));
-          callback(null, data.MessageId);
-        }
-      });
+      sendMsg('+1PHONENUMBER','Kyle checked the mail.');
       break;
     case "LONG":
       console.log("LONG CLICK");
-      params.PhoneNumber = '+1PHONENUMBER';
-      params.Message = 'Battery Voltage: '+event.batteryVoltage;
-      SNS.publish(params, function (err, data) {
-        if (err) {
-          console.error("SNS Publish failed: "+err);
-        } else {
-          console.log("SNS Publish successful! "+ JSON.stringify(data,null,2));
-          callback(null, data.MessageId);
-        }
-      });
+      sendMsg('+1PHONENUMBER','Battery voltage: '+event.batteryVoltage);
       break;
     default:
       console.log("NO CLICKS GIVEN");

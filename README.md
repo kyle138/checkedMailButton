@@ -29,7 +29,7 @@ ___
 
 ___
 ## Step 3: Update Lambda Function
-##### After the sample code has created the SNS Topic updated in Step 2 it has served its purpose. We will store the target phone numbers and messages in Lambda environment variables and then overwrite the sample code with the code below.
+##### After the sample code has created the SNS Topic updated in Step 2 it has served its purpose. We will store the target phone numbers and messages in Lambda environment variables and then overwrite the sample code with the code in index.js.
 ```javascript
 /**
  * The following JSON template shows what is sent as the payload:

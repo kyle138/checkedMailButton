@@ -30,6 +30,7 @@ ___
 ___
 ## Step 3: Update Lambda Function
 ##### After the sample code has created the SNS Topic updated in Step 2 it has served its purpose. Overwrite the sample code with the code below updating ‘+1PHONENUMBER’ with your actual cellular numbers and appropriate messages.
+```javascript
 /**
  * The following JSON template shows what is sent as the payload:
 {
@@ -44,6 +45,7 @@ ___
  * For more documentation, follow the link below.
  * http://docs.aws.amazon.com/iot/latest/developerguide/iot-lambda-rule.html
  */
+```
 
 1. Go to the Amazon Lambda Console.
 2. Copy and paste the contents of [index.js](https://github.com/kyle138/checkedMailButton/blob/master/index.js) into your Lambda function.

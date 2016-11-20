@@ -14,21 +14,6 @@ var phone2 = process.env.Number2;
 var message1 = process.env.Message1;
 var message2 = process.env.Message2;
 
-/**
- * The following JSON template shows what is sent as the payload:
-{
-    "serialNumber": "GXXXXXXXXXXXXXXXXX",
-    "batteryVoltage": "xxmV",
-    "clickType": "SINGLE" | "DOUBLE" | "LONG"
-}
- *
- * A "LONG" clickType is sent if the first press lasts longer than 1.5 seconds.
- * "SINGLE" and "DOUBLE" clickType payloads are sent for short clicks.
- *
- * For more documentation, follow the link below.
- * http://docs.aws.amazon.com/iot/latest/developerguide/iot-lambda-rule.html
- */
-
 exports.handler = (event, context, callback) => {
   //console.log('Received event:', JSON.stringify(event,null,2));    //DEBUG
 

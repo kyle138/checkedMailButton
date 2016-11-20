@@ -25,11 +25,11 @@ ___
 5. Select **‘SMS’** for **Protocol**.
 6. For **Endpoint** enter your cellular number in the *1-138-867-5309* format.
 7. Click on **[Create Subscription]**.
-8. Repeat substeps 4-7 for an additional cellular number.
+8. Repeat substeps **4-7** for an additional cellular number.
 
 ___
 ## Step 3: Update Lambda Function
-##### After the sample code has created the SNS Topic updated in Step 2 it has served its purpose. Overwrite the sample code with the code below updating ‘+1PHONENUMBER’ with your actual cellular numbers and appropriate messages.
+##### After the sample code has created the SNS Topic updated in Step 2 it has served its purpose. We will store the target phone numbers and messages in Lambda environment variables and then overwrite the sample code with the code below.
 ```javascript
 /**
  * The following JSON template shows what is sent as the payload:
@@ -49,8 +49,10 @@ ___
 
 1. Go to the Amazon Lambda Console.
 2. Copy and paste the contents of [index.js](https://github.com/kyle138/checkedMailButton/blob/master/index.js) into your Lambda function.
-3. Update the '+1PHONENUMBER' entries below with your actual cellular numbers and appropriate messages.
-4. Click on **[Save]** and click your Button again to test.
+3. Assign an environment variable with the **Key** of **Number1** and **Value** of **+11388675309** (Substitute your actual number.)
+4. Assign an environment variable with the **Key** of **Message1** and the **Value** of **Alice checked the mail.** (Substitute your actual name.)
+5. Repeat substeps **3-4** for the second target cellular number using the **Key**s of **Number2** and **Message2**.
+6. Click on **[Save]** and click your Button again to test.
 
 ___
 ## Credits:

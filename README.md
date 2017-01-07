@@ -3,7 +3,7 @@ title: Document Center
 ---
 
 # checkedMailButton
-## Lambda Handler for IoT Dash checkedMailButton
+<h2>Lambda Handler for IoT Dash checkedMailButton</h2>
 
 ![IoT Button](http://iotbutton.kylemunz.com/images/image00.jpg "IoT Button")
 I wanted to play with the AWS IoT Button and racked my brain to think of how to use it. In our house whoever gets home first checks the mail and then texts the other person to let them know. Believe it or not texting two words “checked mail” every day can get tedious. Even using “Ok google, send message to…” gets tiresome. So I’ve configured my button so a SINGLE click texts my phone with the message “Cathy checked the mail.” A DOUBLE click texts my wife’s phone with “Kyle checked the mail.” And a LONG click texts my phone with the button’s remaining battery voltage.

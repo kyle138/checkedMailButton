@@ -1,3 +1,7 @@
+---
+title: Document Center
+---
+
 # checkedMailButton
 ## Lambda Handler for IoT Dash checkedMailButton
 
